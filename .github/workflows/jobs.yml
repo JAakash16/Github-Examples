@@ -1,0 +1,14 @@
+name: "Dep job examples"
+
+on: [push]
+
+jobs:
+  job2:
+    needs: job1
+    steps:
+      - name: step1
+        run: echo "Hello"
+  job1:
+    steps:
+      - name: step2
+        run: echo "World"
